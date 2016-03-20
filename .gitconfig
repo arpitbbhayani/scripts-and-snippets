@@ -1,0 +1,17 @@
+[user]
+        email = arpit.b.bhayani@gmail.com
+        name = Arpit Bhayani
+[core]
+        editor=vim
+[color]
+        diff=auto
+[branch]
+        autosetuprebase=always
+[merge]
+        conflictstyle=diff3
+[alias]
+        ci=commit
+        st=status
+        lg=log --all --graph --decorate --date-order
+[push]
+        default=simple
