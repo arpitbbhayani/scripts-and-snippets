@@ -12,7 +12,7 @@ ask_install() {
 install() {
     program_name=$1
     case $program_name in
-        git ) sudo apt-get install git;
+        git ) sudo apt-get install git;;
         nginx ) sudo apt-get install -y nginx nginx-extras;;
         java8 ) sudo add-apt-repository ppa:webupd8team/java -y;
                 sudo apt-get update;
