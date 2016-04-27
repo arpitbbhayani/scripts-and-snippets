@@ -22,6 +22,8 @@ install() {
     esac
 }
 
+sudo apt-get update
+
 programs_supported=("git" "nginx", "java8")
 
 for program in ${programs_supported[@]}; do
