@@ -19,13 +19,14 @@ install() {
                 sudo apt-get update;
                 sudo apt-get install -y oracle-java8-installer;
                 sudo apt-get install -y oracle-java8-set-default;;
+        unity-tweak-tool ) sudo apt-get install unity-tweak-tool;;
         * ) echo "No installation procedure found for $program_name.";;
     esac
 }
 
 sudo apt-get update
 
-programs_supported=("vim" "git" "nginx" "java8")
+programs_supported=("vim" "git" "nginx" "java8" "unity-tweak-tool")
 
 for program in ${programs_supported[@]}; do
     ask_install $program
