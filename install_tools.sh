@@ -27,6 +27,11 @@ download_wallpapers() {
     wget http://www.hdwallpapers.in/download/saturn_dream-1366x768.jpg -O $WALLPAPERS_DIR
     wget http://www.hdwallpapers.in/download/phoenix_nebula-1366x768.jpg -O $WALLPAPERS_DIR
     wget http://www.hdwallpapers.in/download/hubble_galaxy-1366x768.jpg -O $WALLPAPERS_DIR
+    wget http://www.hdwallpapers.in/download/asteroid-1366x768.jpg -O $WALLPAPERS_DIR
+    wget http://www.hdwallpapers.in/download/eclipse_galaxy-1366x768.jpg -O $WALLPAPERS_DIR
+    wget http://www.hdwallpapers.in/download/close_planet-1366x768.jpg -O $WALLPAPERS_DIR
+    wget http://www.hdwallpapers.in/download/far_galaxy-1366x768.jpg -O $WALLPAPERS_DIR
+    wget http://www.hdwallpapers.in/download/serenity_galaxy-1366x768.jpg -O $WALLPAPERS_DIR
 }
 
 install() {
