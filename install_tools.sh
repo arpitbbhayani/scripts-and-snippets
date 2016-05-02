@@ -29,7 +29,9 @@ install() {
                 sudo apt-get update;
                 sudo apt-get install -y oracle-java8-installer;
                 sudo apt-get install -y oracle-java8-set-default;;
-        unity-tweak-tool ) sudo apt-get install unity-tweak-tool;;
+        unity-tweak-tool ) sudo apt-add-repository ppa:freyja-dev/unity-tweak-tool-daily;
+                           sudo apt-get update;
+                           sudo apt-get install unity-tweak-tool;;
         royal-theme ) sudo add-apt-repository ppa:noobslab/themes;
                       sudo apt-get update;
                       sudo apt-get install -y royal-gtk-theme;;
