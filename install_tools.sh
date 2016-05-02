@@ -18,6 +18,17 @@ setup_git_config() {
     fi
 }
 
+download_wallpapers() {
+    WALLPAPERS_DIR=~/space_wallpapers
+    mkdir -p $WALLPAPERS_DIR
+
+    wget http://www.hdwallpapers.in/download/digital_space_universe_4k_8k-1366x768.jpg -O $WALLPAPERS_DIR
+    wget http://www.hdwallpapers.in/download/northern_lights_iceland_aurora_borealis-1366x768.jpg -O $WALLPAPERS_DIR
+    wget http://www.hdwallpapers.in/download/saturn_dream-1366x768.jpg -O $WALLPAPERS_DIR
+    wget http://www.hdwallpapers.in/download/phoenix_nebula-1366x768.jpg -O $WALLPAPERS_DIR
+    wget http://www.hdwallpapers.in/download/hubble_galaxy-1366x768.jpg -O $WALLPAPERS_DIR
+}
+
 install() {
     program_name=$1
     case $program_name in
@@ -38,13 +49,14 @@ install() {
         numix-icons ) sudo add-apt-repository ppa:noobslab/icons;
                       sudo apt-get update;
                       sudo apt-get install vimix-icon-theme;;
+        download-wallpapers ) download_wallpapers;;
         * ) echo "No installation procedure found for $program_name.";;
     esac
 }
 
 sudo apt-get update
 
-programs_supported=("vim" "git" "nginx" "java8" "unity-tweak-tool" "royal-theme" "numix-icons")
+programs_supported=("vim" "git" "nginx" "java8" "unity-tweak-tool" "royal-theme" "numix-icons" "download-wallpapers")
 
 for program in ${programs_supported[@]}; do
     ask_install $program
