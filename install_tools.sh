@@ -55,13 +55,17 @@ install() {
                       sudo apt-get update;
                       sudo apt-get install vimix-icon-theme;;
         download-wallpapers ) download_wallpapers;;
+        mysql-5.7 ) wget http://dev.mysql.com/get/mysql-apt-config_0.3.5-1ubuntu14.04_all.deb;
+                    sudo dpkg -i mysql-apt-config_0.3.5-1ubuntu14.04_all.deb;
+                    sudo apt-get update;
+                    sudo apt-get install mysql-server-5.7 mysql-client-5.7;;
         * ) echo "No installation procedure found for $program_name.";;
     esac
 }
 
 sudo apt-get update
 
-programs_supported=("vim" "git" "nginx" "java8" "unity-tweak-tool" "royal-theme" "numix-icons" "download-wallpapers")
+programs_supported=("vim" "git" "nginx" "java8" "unity-tweak-tool" "royal-theme" "numix-icons" "download-wallpapers" "mysql-5.7")
 
 for program in ${programs_supported[@]}; do
     ask_install $program
