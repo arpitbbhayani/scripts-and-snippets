@@ -59,13 +59,20 @@ install() {
                     sudo dpkg -i mysql-apt-config_0.3.5-1ubuntu14.04_all.deb;
                     sudo apt-get update;
                     sudo apt-get install mysql-server-5.7 mysql-client-5.7;;
+        solarized-theme ) cd $HOME;
+                          sudo apt-get install dconf-cli;
+                          git clone https://github.com/Anthony25/gnome-terminal-colors-solarized;
+                          cd gnome-terminal-colors-solarized;
+                          ./install.sh;
+                          cd ..;
+                          rm -rf gnome-terminal-colors-solarized;;
         * ) echo "No installation procedure found for $program_name.";;
     esac
 }
 
 sudo apt-get update
 
-programs_supported=("vim" "git" "nginx" "java8" "unity-tweak-tool" "royal-theme" "numix-icons" "download-wallpapers" "mysql-5.7")
+programs_supported=("vim" "git" "nginx" "java8" "unity-tweak-tool" "royal-theme" "numix-icons" "download-wallpapers" "mysql-5.7" "solarized-theme")
 
 for program in ${programs_supported[@]}; do
     ask_install $program
