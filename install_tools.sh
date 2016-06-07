@@ -66,6 +66,8 @@ install() {
                           ./install.sh;
                           cd ..;
                           rm -rf gnome-terminal-colors-solarized;;
+        git-prompt) cp .bash_aliases ~/.bash_aliases;
+                    echo "source ~/.bash_aliases" >> ~/.bashrc;;
         * ) echo "No installation procedure found for $program_name.";;
     esac
 }
