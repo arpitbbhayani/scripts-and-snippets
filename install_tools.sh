@@ -74,7 +74,7 @@ install() {
 
 sudo apt-get update
 
-programs_supported=("vim" "git" "nginx" "java8" "unity-tweak-tool" "royal-theme" "numix-icons" "download-wallpapers" "mysql-5.7" "solarized-theme")
+programs_supported=("vim" "git" "nginx" "java8" "unity-tweak-tool" "royal-theme" "numix-icons" "download-wallpapers" "mysql-5.7" "solarized-theme" "git-prompt")
 
 for program in ${programs_supported[@]}; do
     ask_install $program
