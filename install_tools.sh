@@ -66,13 +66,16 @@ install() {
                           ./install.sh;
                           cd ..;
                           rm -rf gnome-terminal-colors-solarized;;
-        git-prompt) cp .bash_aliases ~/.bash_aliases;
-                    echo "source ~/.bash_aliases" >> ~/.bashrc;;
+        git-prompt) mkdir -p $HOME/.bash;
+                    cp setup-git-prompt.sh $HOME/setup-git-prompt.sh;
+                    wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O $HOME/.bash/git-prompt.sh;
+                    bash $HOME/setup-git-prompt.sh;
+                    rm $HOME/setup-git-prompt.sh;;
         * ) echo "No installation procedure found for $program_name.";;
     esac
 }
 
-sudo apt-get update
+# sudo apt-get update
 
 programs_supported=("vim" "git" "nginx" "java8" "unity-tweak-tool" "royal-theme" "numix-icons" "download-wallpapers" "mysql-5.7" "solarized-theme" "git-prompt")
 
