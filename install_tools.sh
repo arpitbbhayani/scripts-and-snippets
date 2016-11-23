@@ -40,7 +40,6 @@ install() {
         vim ) sudo apt-get install -y vim;;
         git ) sudo apt-get install -y git;
               setup_git_config;;
-        nginx ) sudo apt-get install -y nginx nginx-extras;;
         java8 ) sudo add-apt-repository ppa:webupd8team/java -y;
                 sudo apt-get update;
                 sudo apt-get install -y oracle-java8-installer;
@@ -48,36 +47,17 @@ install() {
         unity-tweak-tool ) sudo apt-add-repository ppa:freyja-dev/unity-tweak-tool-daily;
                            sudo apt-get update;
                            sudo apt-get install unity-tweak-tool;;
-        royal-theme ) sudo add-apt-repository ppa:noobslab/themes;
-                      sudo apt-get update;
-                      sudo apt-get install -y royal-gtk-theme;;
-        numix-icons ) sudo add-apt-repository ppa:noobslab/icons;
-                      sudo apt-get update;
-                      sudo apt-get install vimix-icon-theme;;
-        download-wallpapers ) download_wallpapers;;
-        mysql-5.7 ) wget http://dev.mysql.com/get/mysql-apt-config_0.3.5-1ubuntu14.04_all.deb;
-                    sudo dpkg -i mysql-apt-config_0.3.5-1ubuntu14.04_all.deb;
-                    sudo apt-get update;
-                    sudo apt-get install mysql-server-5.7 mysql-client-5.7;;
-        solarized-theme ) cd $HOME;
-                          sudo apt-get install dconf-cli;
-                          git clone https://github.com/Anthony25/gnome-terminal-colors-solarized;
-                          cd gnome-terminal-colors-solarized;
-                          ./install.sh;
-                          cd ..;
-                          rm -rf gnome-terminal-colors-solarized;;
-        git-prompt) mkdir -p $HOME/.bash;
-                    cp setup-git-prompt.sh $HOME/setup-git-prompt.sh;
-                    wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O $HOME/.bash/git-prompt.sh;
-                    bash $HOME/setup-git-prompt.sh;
-                    rm $HOME/setup-git-prompt.sh;;
+        zsh ) sudo apt-get install zsh;
+              sudo apt-get install git-core;
+              wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh;
+              chsh -s `which zsh`;;
         * ) echo "No installation procedure found for $program_name.";;
     esac
 }
 
 # sudo apt-get update
 
-programs_supported=("vim" "git" "nginx" "java8" "unity-tweak-tool" "royal-theme" "numix-icons" "download-wallpapers" "mysql-5.7" "solarized-theme" "git-prompt")
+programs_supported=("vim" "git" "java8" "unity-tweak-tool" "zsh")
 
 for program in ${programs_supported[@]}; do
     ask_install $program
