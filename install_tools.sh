@@ -18,22 +18,6 @@ setup_git_config() {
     fi
 }
 
-download_wallpapers() {
-    WALLPAPERS_DIR=~/space_wallpapers
-    mkdir -p $WALLPAPERS_DIR
-
-    wget http://www.hdwallpapers.in/download/digital_space_universe_4k_8k-1366x768.jpg -O $WALLPAPERS_DIR
-    wget http://www.hdwallpapers.in/download/northern_lights_iceland_aurora_borealis-1366x768.jpg -O $WALLPAPERS_DIR
-    wget http://www.hdwallpapers.in/download/saturn_dream-1366x768.jpg -O $WALLPAPERS_DIR
-    wget http://www.hdwallpapers.in/download/phoenix_nebula-1366x768.jpg -O $WALLPAPERS_DIR
-    wget http://www.hdwallpapers.in/download/hubble_galaxy-1366x768.jpg -O $WALLPAPERS_DIR
-    wget http://www.hdwallpapers.in/download/asteroid-1366x768.jpg -O $WALLPAPERS_DIR
-    wget http://www.hdwallpapers.in/download/eclipse_galaxy-1366x768.jpg -O $WALLPAPERS_DIR
-    wget http://www.hdwallpapers.in/download/close_planet-1366x768.jpg -O $WALLPAPERS_DIR
-    wget http://www.hdwallpapers.in/download/far_galaxy-1366x768.jpg -O $WALLPAPERS_DIR
-    wget http://www.hdwallpapers.in/download/serenity_galaxy-1366x768.jpg -O $WALLPAPERS_DIR
-}
-
 install() {
     program_name=$1
     case $program_name in
@@ -44,6 +28,9 @@ install() {
                 sudo apt-get update;
                 sudo apt-get install -y oracle-java8-installer;
                 sudo apt-get install -y oracle-java8-set-default;;
+        python-dev ) sudo apt-get install virtualenvwrapper python-pip python3-pip;
+                     sudo apt-get install python-dev python3-dev;
+                     echo "source /usr/share/virtualenvwrapper/virtualenvwrapper.sh" >> ~/.bashrc;;
         unity-tweak-tool ) sudo apt-add-repository ppa:freyja-dev/unity-tweak-tool-daily;
                            sudo apt-get update;
                            sudo apt-get install unity-tweak-tool;;
@@ -57,7 +44,7 @@ install() {
 
 # sudo apt-get update
 
-programs_supported=("vim" "git" "java8" "unity-tweak-tool" "zsh")
+programs_supported=("vim" "git" "java8" "unity-tweak-tool" "zsh" "python-dev")
 
 for program in ${programs_supported[@]}; do
     ask_install $program
