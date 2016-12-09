@@ -41,13 +41,16 @@ install() {
         atom ) sudo add-apt-repository ppa:webupd8team/atom;
                sudo apt-get update;
                sudo apt-get install atom;;
+        tibesta) sudo add-apt-repository ppa:ackondro/tibesti;
+                 sudo apt-get update;
+                 sudo apt-get install tibesti;
         * ) echo "No installation procedure found for $program_name.";;
     esac
 }
 
 # sudo apt-get update
 
-programs_supported=("vim" "git" "java8" "unity-tweak-tool" "zsh" "python-dev" "atom")
+programs_supported=("vim" "git" "java8" "unity-tweak-tool" "zsh" "python-dev" "atom" "tibesta")
 
 for program in ${programs_supported[@]}; do
     ask_install $program
