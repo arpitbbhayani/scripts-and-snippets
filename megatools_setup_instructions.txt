@@ -1,0 +1,7 @@
+1. Create a file ~/.megarc
+2. Sample contents of the file are
+```
+[Login]
+Username = arpit.b.bhayani@gmail.com
+Password = xxxxxxxxxxxxx
+```

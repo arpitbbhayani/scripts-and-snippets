@@ -46,13 +46,16 @@ install() {
                  sudo apt-get install tibesti;;
         recordmydesktop ) sudo apt-get install gtk-recordmydesktop;;
         tmux ) sudo apt-get install tmux;;
+        megatools ) sudo add-apt-repository ppa:megous/ppa;
+                    sudo apt-get update;
+                    sudo apt-get install -y megatools glib-networking fuse curl;;
         * ) echo "No installation procedure found for $program_name.";;
     esac
 }
 
 # sudo apt-get update
 
-programs_supported=("vim" "git" "java8" "unity-tweak-tool" "zsh" "python-dev" "atom" "tibesta" "recordmydesktop" "tmux")
+programs_supported=("vim" "git" "java8" "unity-tweak-tool" "zsh" "python-dev" "atom" "tibesta" "recordmydesktop" "tmux" "megatools")
 
 for program in ${programs_supported[@]}; do
     ask_install $program
