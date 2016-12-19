@@ -45,6 +45,9 @@ install() {
                  sudo apt-get update;
                  sudo apt-get install tibesti;;
         recordmydesktop ) sudo apt-get install gtk-recordmydesktop;;
+        simple-screen-recorder ) sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder;
+                                 sudo apt-get update;
+                                 sudo apt-get install simplescreenrecorder;;
         tmux ) sudo apt-get install tmux;;
         megatools ) sudo add-apt-repository ppa:megous/ppa;
                     sudo apt-get update;
@@ -55,7 +58,7 @@ install() {
 
 # sudo apt-get update
 
-programs_supported=("vim" "git" "java8" "unity-tweak-tool" "zsh" "python-dev" "atom" "tibesta" "recordmydesktop" "tmux" "megatools")
+programs_supported=("vim" "git" "java8" "unity-tweak-tool" "zsh" "python-dev" "atom" "tibesta" "recordmydesktop" "simple-screen-recorder" "tmux" "megatools")
 
 for program in ${programs_supported[@]}; do
     ask_install $program
