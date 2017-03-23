@@ -1,1 +1,8 @@
 alias pycache-clear="find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf"
+
+alias gs="git status"
+alias gl="git log"
+alias gpr="git pull --rebase"
+alias gpu="git push"
+alias gb="git branch"
+alias gbc="git checkout"
